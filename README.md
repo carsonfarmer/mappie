@@ -1,9 +1,9 @@
 mappie
 ======
 
-Mappie: A Python package for managing the retrieval and storage of webmap images
+mappie: A Python package for playing with webmap images
 
-Mappie makes it easy to download map tiles from various webmap sources and use 
+mappie makes it easy to download map tiles from various webmap sources and use 
 them in visualizations with any type of geospatial data. It is designed with 
 'matplotlib' and 'cartopy' in mind, but should work nicely with most geospatial 
 plotting libraries in Python (e.g., Basemap).
