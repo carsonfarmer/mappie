@@ -59,4 +59,4 @@ ax.imshow(webmap, origin='upper', extent=ext, transform=ccrs.PlateCarree())
 ax.coastlines(resolution='50m', color='black', linewidth=2)
 plt.show() # or plt.savefig('google-map.png')
 ```
-![image]( "GoogleMap Tile")
+![image](https://raw.github.com/cfarmer/mappie/master/google-map.png "GoogleMap Tile")
