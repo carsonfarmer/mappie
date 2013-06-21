@@ -35,27 +35,28 @@ Example
 ----------
 
 ```python
-   import mappie.sources as sources
-   from mappie.geocoder import Geocoder
-   google = sources.GoogleManager()
-   geocoder = Geocoder()
-   bbox = geocoder.geocode('Hunter College, New York, NY, USA', output='bbox')
-   webmap, newbox = google.create_map(bbox, zoom=7)
-   newbox
+import mappie.sources as sources
+from mappie.geocoder import Geocoder
+google = sources.GoogleManager()
+geocoder = Geocoder()
+bbox = geocoder.geocode('Hunter College, New York, NY, USA', output='bbox')
+webmap, newbox = google.create_map(bbox, zoom=7)
+newbox
 (39.694555483164955, 41.824595150921695, -75.37065401673316, -72.55815401673317)
-   webmap.show()
+webmap.show()
 ```
 
 Plotting
 ----------
 ```python
-   from cartopy import config
-   import cartopy.crs as ccrs
-   import matplotlib.pyplot as plt
-   fig = plt.figure(figsize=(8, 12))
-   ax = plt.axes(projection=ccrs.PlateCarree())
-   ext = newbox[2:4]+newbox[0:2] # re-arrange bounding box for 'imshow'
-   ax.imshow(webmap, origin='upper', extent=ext, transform=ccrs.PlateCarree())
-   ax.coastlines(resolution='50m', color='black', linewidth=2)
-   plt.show() # or plt.savefig('google-map.png')
+from cartopy import config
+import cartopy.crs as ccrs
+import matplotlib.pyplot as plt
+fig = plt.figure(figsize=(8, 12))
+ax = plt.axes(projection=ccrs.PlateCarree())
+ext = newbox[2:4]+newbox[0:2] # re-arrange bounding box for 'imshow'
+ax.imshow(webmap, origin='upper', extent=ext, transform=ccrs.PlateCarree())
+ax.coastlines(resolution='50m', color='black', linewidth=2)
+plt.show() # or plt.savefig('google-map.png')
 ```
+![image]( "GoogleMap Tile")
